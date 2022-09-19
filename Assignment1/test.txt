@@ -1,3 +1,4 @@
 - canary test
-
-- 
+- test cell exists
+- test alive cell is alive
+- test dead cell is dead

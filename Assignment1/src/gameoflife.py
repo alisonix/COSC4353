@@ -1,3 +1,8 @@
 class GameOfLife:
-  def please_remove_this_sample(self):
-    return 1
+  True
+
+class Cell:
+  status = True
+  
+  def isAlive(status):
+    return Cell.status
