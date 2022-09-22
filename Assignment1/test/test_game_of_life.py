@@ -5,6 +5,7 @@ from src.gameoflife import *
 DEAD = CellState.DEAD.value
 ALIVE = CellState.ALIVE.value
 
+
 class GameOfLifeTests(unittest.TestCase):
 
     def test_canary(self):
@@ -61,12 +62,29 @@ class GameOfLifeTests(unittest.TestCase):
         self.assertEqual(ALIVE, next_state(cell_status, number_of_live_neighbors))
 
     def test_live_cell_live_two_neighbors(self):
-      cell_status = ALIVE
-      number_of_live_neighbors = 2
-      self.assertEqual(ALIVE, next_state(cell_status, number_of_live_neighbors))
+        cell_status = ALIVE
+        number_of_live_neighbors = 2
+        self.assertEqual(ALIVE, next_state(cell_status, number_of_live_neighbors))
 
-    def test_grid_does_not_exist(self):
-      self.assertEqual(False, grid_status())
+    def test_live_cell_at_2_3(self):
+        cell = (2, 3)
+        self.assertEqual(
+            ((1, 2), (1, 3), (1, 4), (2, 2), (2, 4), (3, 2), (3, 3), (3, 4)), generate_signals_for_cell(cell))
+
+    def test_live_cell_at_3_3(self):
+        cell = (3, 3)
+        self.assertEqual(
+            ((2, 2), (2, 3), (2, 4), (3, 2), (3, 4), (4, 2), (4, 3), (4, 4)), generate_signals_for_cell(cell))
+
+    def test_live_cell_at_2_4(self):
+        cell = (2, 4)
+        self.assertEqual(
+            ((1, 3), (1, 4), (1, 5), (2, 3), (2, 5), (3, 3), (3, 4), (3, 5)), generate_signals_for_cell(cell))
+
+    def test_live_cell_at_0_0(self):
+        cell = (0, 0)
+        self.assertEqual(((-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)), generate_signals_for_cell(cell))
+
 
 if __name__ == '__main__':
     unittest.main()

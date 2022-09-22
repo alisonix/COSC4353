@@ -10,4 +10,7 @@ x a live cell with four live neighbors dies
 x a live cell with eight live neighbors dies
 x a live cell with three live neighbors lives
 x a live cell with two live neighbors lives
-x test grid does not exist
+x given a live cell at position 2, 3, it generates eight signals for positions (1, 2), (1, 3), (1, 4), (2, 2), (2, 4), (3, 2), (3, 3), (3, 4)
+x given a live cell at position 3, 3, it generates eight signals for positions (2, 2), (2, 3), (2, 4), (3, 2), (3, 4), (4, 2), (4, 3), (4, 4)
+x given a live cell at positions 2, 4 it generates eight signals for positions (1, 3), (1, 4), (1, 5), (2, 3), (2, 5), (3, 3), (3, 4), (3, 5)
+x given a live cell at position 0, 0 it generates eight signals for positions (-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)
